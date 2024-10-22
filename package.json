@@ -1,43 +1,59 @@
 {
-  "name": "Jfs_cards",
-  "version": "2.1.0",
-  "main": "dist-electron/main/index.js",
-  "description": "Jfs_cards is a program which makes remembering things easy. Because it's a lot more efficient than traditional study methods, you can either greatly decrease your time spent studying, or greatly increase the amount you learn.",
-  "author": "草鞋没号 <308487730@qq.com>",
-  "license": "MIT",
-  "private": true,
-  "debug": {
-    "env": {
-      "VITE_DEV_SERVER_URL": "http://127.0.0.1:7777/"
+    "name": "Jfs_cards",
+    "version": "1.0.0",
+    "main": "dist-electron/main/index.js",
+    "description": "Jfs_cards is a program which makes remembering things easy. Because it's a lot more efficient than traditional study methods, you can either greatly decrease your time spent studying, or greatly increase the amount you learn.",
+    "author": "Alex Space",
+    "license": "MIT",
+    "private": true,
+    "debug": {
+        "env": {
+            "VITE_DEV_SERVER_URL": "http://127.0.0.1:7777/"
+        }
+    },
+    "scripts": {
+        "dev": "vite && pnpm watch-tailwind",
+        "watch-tailwind": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
+        "build": "tsc && vite build && electron-builder",
+        "preview": "vite preview",
+        "pree2e": "vite build --mode=test",
+        "e2e": "playwright test",
+        "lint": "eslint . --ext js,ts,tsx",
+        "lint-fix": "eslint . --ext js,ts,tsx --fix"
+    },
+    "dependencies": {
+        "electron-updater": "^5.3.0",
+        "eslint": "^8.57.1"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.32.0",
+        "@types/react": "^18.0.28",
+        "@types/react-dom": "^18.0.11",
+        "@typescript-eslint/eslint-plugin": "^8.11.0",
+        "@typescript-eslint/parser": "^8.11.0",
+        "@vitejs/plugin-react": "^3.1.0",
+        "autoprefixer": "^10.4.20",
+        "daisyui": "^4.12.13",
+        "electron": "^23.2.0",
+        "electron-builder": "^23.6.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.2.1",
+        "eslint-plugin-react": "^7.37.1",
+        "eslint-plugin-react-hooks": "^5.0.0",
+        "eslint-plugin-react-refresh": "^0.4.13",
+        "postcss": "^8.4.47",
+        "prettier": "^3.3.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "sass": "^1.60.0",
+        "tailwindcss": "^3.4.14",
+        "typescript": "^5.0.2",
+        "vite": "^4.1.4",
+        "vite-electron-plugin": "^0.8.2",
+        "vite-plugin-electron": "^0.11.1",
+        "vite-plugin-electron-renderer": "^0.13.12"
+    },
+    "engines": {
+        "node": "^14.18.0 || >=16.0.0"
     }
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build && electron-builder",
-    "preview": "vite preview",
-    "pree2e": "vite build --mode=test",
-    "e2e": "playwright test"
-  },
-  "dependencies": {
-    "electron-updater": "^5.3.0"
-  },
-  "devDependencies": {
-    "@playwright/test": "^1.32.0",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
-    "@vitejs/plugin-react": "^3.1.0",
-    "electron": "^23.2.0",
-    "electron-builder": "^23.6.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sass": "^1.60.0",
-    "typescript": "^5.0.2",
-    "vite": "^4.1.4",
-    "vite-electron-plugin": "^0.8.2",
-    "vite-plugin-electron": "^0.11.1",
-    "vite-plugin-electron-renderer": "^0.13.12"
-  },
-  "engines": {
-    "node": "^14.18.0 || >=16.0.0"
-  }
 }
